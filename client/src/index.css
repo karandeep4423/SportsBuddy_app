@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+input[type="text"]:focus ~ .input-text,
+input[type="text"]:valid ~ .input-text,
+input[type="password"]:focus ~ .input-password,
+input[type="password"]:valid~ .input-password,
+input[type="email"]:focus ~ .input-email,
+input[type="email"]:valid~ .input-email,
+input[type="number"]:focus ~ .input-text,
+input[type="number"]:valid~ .input-text,
+textarea[type="text"]:valid~ .textarea-text,
+textarea[type="text"]:focus~ .textarea-text
+{
+  @apply text-blue-500 bg-[rgba(0,0,0,0.5)]  transform -translate-y-6 -translate-x-2 scale-75;
+}
+
+input[type="text"]:focus ~ .profile-input-text,
+input[type="text"]:valid~ .profile-input-text,
+input[type="number"]:focus ~ .profile-input-number,
+input[type="number"]:valid~ .profile-input-number,
+input[type="date"]:focus ~ .profile-input-date,
+input[type="date"]:valid~ .profile-input-date,
+textarea[type="text"]:valid~ .profile-textarea-text,
+textarea[type="text"]:focus~ .profile-textarea-text{
+  @apply text-blue-500 bg-white  transform -translate-y-6 -translate-x-2 scale-75;
+}
+
