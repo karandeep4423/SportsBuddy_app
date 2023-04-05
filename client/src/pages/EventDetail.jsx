@@ -73,7 +73,7 @@ const EventDetail = () => {
   const longitude = event?.address?.coordinates[0];
 
   return (
-    <div>
+    <div className="max-w-screen-2xl m-auto">
       {event?._id != eventID ? (
         <Player
           className="w-72 h-72"
@@ -83,43 +83,43 @@ const EventDetail = () => {
         ></Player>
       ) : (
         <div>
-          <div className="mt-10 text-slate-700  underline decoration-double decoration-sky-600 underline-offset-4 text-center first-letter:uppercase  text-3xl">
+          <div className="my-10 text-slate-700 font-medium  underline decoration-double decoration-sky-600 underline-offset-4 text-center first-letter:uppercase  text-5xl">
             <h1>{event?.name}</h1>
           </div>
           <div className="border-2 min-w-screen h-fit p-5 sm:p-10 m-5 md:m-10 border-sky-100 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
             <div className="flex justify-around  flex-wrap">
-              <div className="w-[100%] order-last md:-order-last  md:w-[30%] lg:w-[50%] flex justify-between  items-center flex-wrap ">
-                <div className="grid grid-cols-2 mt-6 md:mt-0 w-[100%] justify-around gap-x-10 sm:gap-x-24  gap-6">
+              <div className="w-full order-last lg:-order-last  lg:w-[50%] flex justify-between  items-center flex-wrap ">
+                <div className="grid grid-cols-2 mt-6 lg:mt-0 w-[100%] justify-around gap-x-10 sm:gap-x-24  gap-6">
                   <div>
-                    <div className="flex text-xl text-slate-700 sm:text-2xl">
+                    <div className="flex text-xl font-medium text-slate-700 sm:text-2xl">
                       <img className="h-8 w-8" src="sports-icon.png"></img>
                       <h1>Type of Sport</h1>
                     </div>
                     <p className="ml-9 text-slate-600 text-lg sm:text-xl">{event?.sport} </p>
                   </div>
                   <div className="">
-                    <div className="flex text-slate-700 text-xl sm:text-2xl">
+                    <div className="flex font-medium text-slate-700 text-xl sm:text-2xl">
                       <img className="h-8 w-8" src="location-icon.gif"></img>
                       <h1>Location</h1>
                     </div>
                     <p className="ml-9 text-slate-500 text-lg sm:text-xl">{event?.location}</p>
                   </div>
                   <div>
-                    <div className="flex text-xl text-slate-700 sm:text-2xl">
+                    <div className="flex font-medium text-xl text-slate-700 sm:text-2xl">
                       <img className="h-8 w-8" src="city-icon.gif"></img>
                       <h1>City</h1>
                     </div>
                     <p className="ml-9 text-slate-600 text-lg sm:text-xl">{event?.city}</p>
                   </div>
                   <div className="">
-                    <div className="flex text-xl text-slate-700 sm:text-2xl">
+                    <div className="flex font-medium text-xl text-slate-700 sm:text-2xl">
                       <img className="h-8 w-8" src="calendar.gif"></img>
                       <h1>Start Date</h1>
                     </div>
                     <p className="sm:text-xl text-slate-600 text-lg ml-9">{event?.date}</p>
                   </div>
                   <div>
-                    <div className="text-xl text-slate-700 sm:text-2xl flex">
+                    <div className="text-xl font-medium text-slate-700 sm:text-2xl flex">
                       <img className="h-8 w-8" src="player-icon.gif"></img>
                       <h1>Number of Players</h1>
                     </div>
@@ -128,7 +128,7 @@ const EventDetail = () => {
                     </p>
                   </div>
                   <div>
-                    <div className="sm:text-2xl text-slate-700 text-xl flex">
+                    <div className="sm:text-2xl font-medium text-slate-700 text-xl flex">
                       <img className="h-8 w-8" src="avatar-icon.gif"></img>
                       <h1>Hosted BY</h1>
                     </div>
@@ -140,8 +140,8 @@ const EventDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="overflow-hidden lg:space-x-0 md:space-x-20 w-96 min-h-96">
-                <div className="flex flex-row-reverse mb-2 mr-10 gap-10">
+              <div className="overflow-hidden lg:space-x-20 w-96 min-h-96">
+                <div className="flex flex-row-reverse  mb-2 mr-10 gap-10">
                   <div>
                     <DeleteModal />
                   </div>
@@ -153,7 +153,7 @@ const EventDetail = () => {
               </div>
             </div>
             <div className="mt-6">
-              <h1 className="text-2xl text-slate-700 sm:text-3xl">Description</h1>
+              <h1 className="text-2xl font-medium text-slate-700 sm:text-3xl">Description</h1>
               <p className="text-lg text-slate-600 sm:text-xl mt-2">{event?.description}</p>
             </div>
             <div className="border-2 mt-5 sm:mt-10  w-full min-h-72 border-slate-300">

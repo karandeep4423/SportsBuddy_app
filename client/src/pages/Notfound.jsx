@@ -3,7 +3,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 const Notfound = () => {
   return (
-    <div>
+    <div className="max-w-screen-2xl m-auto">
       <Player
         className="w-screen h-screen"
         autoplay

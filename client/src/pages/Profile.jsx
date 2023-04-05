@@ -21,7 +21,7 @@ const Profile = () => {
   let id = JSON.parse(localStorage.getItem("user"))?.details;
 
   return (
-    <div className="">
+    <div className="max-w-screen-2xl m-auto">
       {loading ? (
        <Player
        className="w-72 h-72 "
@@ -83,7 +83,7 @@ const Profile = () => {
         <div>
           {userId !== id?._id ? (
             <div>
-              <h1 className="text-center mt-5 text-slate-700 text-2xl sm:text-6xl">User have not setup profile yet</h1>
+              <h1 className="text-center font-medium mt-5 text-slate-700 text-2xl sm:text-6xl">User have not setup profile yet</h1>
               <div className="w-1/2 m-auto">
               <Player
                 autoplay
@@ -94,7 +94,7 @@ const Profile = () => {
             </div>
           ) : (
             <div>
-            <h1 className ="text-5xl text-slate-700 text-center mt-6">Profile</h1>
+            <h1 className ="text-5xl font-medium text-slate-700 text-center mt-8">Profile</h1>
             <div className="flex-wrap gap-y-10 flex justify-around items-center ">
               <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-8 border-slate-300 text-xl  p-6 h-fit mt-10 sm:-mt-20 max-w-fit">
               <h3 className=""><span className="text-sky-600">{id?.username}</span>,Please setup your profile</h3>

@@ -65,10 +65,10 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className=" bg-[url('bg.jpg')] bg-cover  bg-no-repeat w-full h-full   ">
+    <div className="max-w-screen-2xl m-auto bg-[url('bg.jpg')] bg-cover  bg-no-repeat w-full h-full   ">
       <div className="flex justify-around flex-wrap  ">
         <div className="m-4   rounded-3xl p-4 bg-[rgba(0,0,0,0.5)]   sm:m-10  min-w-96 min-h-96 border-2  border-black">
-          <div className="animate-wiggle flex justify-around m-auto	 flex-row flex-wrap text-6xl">
+          <div className="animate-wiggle flex justify-around font-medium m-auto	 flex-row flex-wrap text-6xl">
             <h1 className=" ">H</h1>
             <img
               className="w-8 h-8 mt-5 rounded-full"

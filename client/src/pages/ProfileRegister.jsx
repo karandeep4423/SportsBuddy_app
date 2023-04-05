@@ -37,8 +37,8 @@ function ProfileRegister() {
   };
 
   return (
-    <div>
-      <h1 className="text-4xl text-center mt-5">Register Profile</h1>
+    <div className="max-w-screen-2xl m-auto">
+      <h1 className="text-5xl text-center font-medium mt-8">Register Profile</h1>
       <div className="flex flex-row-reverse justify-around items-center m-10">
         <div className="invisible md:visible md:mt-24 w-[500px] h-[450px] xl:w-[800px] xl:h-[750px]">
           <img src="register-profile.jpg"></img>
