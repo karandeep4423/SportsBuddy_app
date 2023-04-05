@@ -8,10 +8,9 @@ import {
 } from "../Store/features/event-slice";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/leaflet.css';
 import { DeleteModal, UpdateEventModal } from "../components/Modal";
 import ClipLoader from "react-spinners/ClipLoader";
 import moment from "moment";
