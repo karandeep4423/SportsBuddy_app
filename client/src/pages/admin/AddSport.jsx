@@ -38,9 +38,9 @@ const AddSport = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-screen-2xl m-auto">
       <div className="my-10 flex flex-wrap justify-evenly gap-10 mx-4 ">
-        <h1 className="text-5xl ">List of Sports</h1>
+        <h1 className="text-5xl font-medium">List of Sports</h1>
         <form
           method="POST"
           className="flex flex-wrap justify-center gap-5 items-center"
