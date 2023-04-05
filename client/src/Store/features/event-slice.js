@@ -9,7 +9,6 @@ export const createEvent = createAsyncThunk(
       return response.data;
     } catch (err) {
       rejectWithValue(err);
-      console.log(err);
     }
   }
 );
@@ -20,7 +19,7 @@ export const deleteEvent = createAsyncThunk(
       const response = await api.deleteEvent(deleteID);
       return response.data;
     } catch (err) {
-      console.log(err.message);
+      return err;
     }
   }
 );
@@ -29,10 +28,10 @@ export const addToComment = createAsyncThunk(
   async ({ commentValue, eventID }, { rejectWithValue }) => {
     try {
       const response = await api.addToComment(commentValue, eventID);
+      console.log("resposne",response.data)
       return response.data;
     } catch (err) {
       rejectWithValue(err);
-      console.log(err.response.data);
     }
   }
 );
@@ -47,7 +46,7 @@ export const deleteToComment = createAsyncThunk(
       );
       return response.data;
     } catch (err) {
-      console.log(err.response.data);
+      return err;
     }
   }
 );
@@ -58,7 +57,7 @@ export const joinToEvent = createAsyncThunk(
       const response = await api.joinToEvent(eventId);
       return response.data;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 );
@@ -69,7 +68,7 @@ export const updateToEvent = createAsyncThunk(
       const response = await api.updateToEvent(id,updateEventData);
       return response.data;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 );
@@ -78,7 +77,7 @@ export const getEvents = createAsyncThunk("getevents", async () => {
     const response = await api.getEvents();
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
+    return err;
   }
 });
 export const getEvent = createAsyncThunk("getEvent", async (eventID) => {
@@ -86,7 +85,7 @@ export const getEvent = createAsyncThunk("getEvent", async (eventID) => {
     const response = await api.getEvent(eventID);
     return response.data;
   } catch (err) {
-    console.log(err);
+    return err;
   }
 });
 

@@ -6,7 +6,7 @@ export const getSport = createAsyncThunk("getSport", async () => {
     const response = await api.getSport();
     return response.data;
   } catch (err) {
-    console.log(err.message);
+    return err.message;
   }
 });
 
@@ -15,17 +15,16 @@ export const getCities = createAsyncThunk("getCities", async () => {
     const response = await api.getCities();
     return response.data;
   } catch (err) {
-    console.log(err.message);
+    return err;
   }
 });
 
 export const addSport = createAsyncThunk("createSport", async (sportData) => {
-  console.log("sport", sportData);
   try {
     const response = await api.addSport(sportData);
     return response.data;
   } catch (err) {
-    console.log(err.message);
+    return err;
   }
 });
 
@@ -36,7 +35,7 @@ export const updateSport = createAsyncThunk(
       const response = await api.updateSport(id, sport);
       return response.data;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 );
@@ -46,7 +45,7 @@ export const deleteSport = createAsyncThunk("deleteSport", async (id) => {
     const response = await api.deleteSport(id);
     return response.data;
   } catch (err) {
-    console.log(err.message);
+    return err;
   }
 });
 
@@ -55,7 +54,7 @@ export const addCity = createAsyncThunk("createCity", async (city) => {
     const response = await api.addCity(city);
     return response.data;
   } catch (err) {
-    console.log(err.message);
+    return err;
   }
 });
 export const updateCity = createAsyncThunk(
@@ -65,7 +64,7 @@ export const updateCity = createAsyncThunk(
       const response = await api.updateCity(id, city);
       return response.data;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 );
@@ -74,7 +73,7 @@ export const deleteCity = createAsyncThunk("deletecity", async (id) => {
     const response = await api.deleteCity(id);
     return response.data;
   } catch (err) {
-    console.log(err.message);
+    return err;
   }
 });
 

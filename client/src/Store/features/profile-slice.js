@@ -9,7 +9,7 @@ export const getProfile = createAsyncThunk(
       setLoading(false);
       return response.data;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 );
@@ -21,7 +21,7 @@ export const registerProfile = createAsyncThunk(
       const response = await api.registerProfile(profileData);
       return response.data;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 );

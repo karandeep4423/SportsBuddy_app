@@ -89,7 +89,6 @@ export const googleLogin = async (req, res) => {
     res.status(200).json({ details, token,isAdmin:oldUser.isAdmin})
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
-    console.log(error);
   }
 };
 

@@ -36,7 +36,7 @@ export const deleteEvent = async (req, res, next) => {
             res.json(result);
           })
           .catch((err) => {
-            console.log(err.message);
+            next(err.message);
           });
         }
     })
@@ -83,7 +83,7 @@ export const createComment = async (req, res, next) => {
         message: result,
       });
     })
-    .catch((err) => next(err));
+    .catch((err) => next(err.message));
 };
 
 export const deleteComment = async (req, res, next) => {
@@ -117,34 +117,3 @@ export const joinEvent = async(req, res,next) => {
 };
 
 
-// export const joinEvent = async (req, res, next) => {
-//   Event.findOne(
-//     { _id: req.body.eventId }
-//     // { $push: { joinEvent: req.user.id } },
-//     // { new: true }
-//   )
-//     // .populate("joinEvent", "username")
-//     .then((post) => {
-//       // if (err || !post) {
-//       //   return res.status(422).json({ error: err });
-//       // }
-//       let count = 0;
-
-//       for (let i of post.joinEvent) {
-//         if (i["i"] === req.user.id) {
-//           console.log("you joined");
-//           return res.status(400).json({ error: "You already join this event" });
-//         }
-//         count++;
-//       }
-//       post
-//         .update({ $push: { joinEvent: req.user.id } }, { new: true })
-//         .then((result) => {
-//           res.json(result);
-//         })
-//         .catch((err) => {
-//           console.log(err);
-//         });
-//     })
-//     .catch((err) => next(err));
-// };
