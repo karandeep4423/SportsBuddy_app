@@ -71,7 +71,7 @@ const EventSchema = new mongoose.Schema({
 const options = {
   provider: 'opencage',
   httpAdapter: 'https', 
-  apiKey:"87d83c492bc542379d5de1ecefe9a85b", 
+  apiKey:process.env.OPEN_CAGE_API_KEY, 
   formatter: null 
 };
 

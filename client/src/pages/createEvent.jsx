@@ -57,7 +57,7 @@ const CreateEvent = () => {
       dispatch(getEvents());
       setBtnLoader(false);
       navigate("/");
-      toast.success("Event has been created successfully")
+      // toast.success("Event has been created successfully")
     } else {
       setBtnLoader(false);
       toast.warning("All fields are required");

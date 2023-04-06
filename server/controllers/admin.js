@@ -5,7 +5,7 @@ export const createSport = async (req, res, next) => {
   let sport = new Sport(req.body);
   try {
     await sport.save();
-    res.status(201).json({
+    res.status(200).json({
       message: "Sport created",
     });
   } catch (err) {

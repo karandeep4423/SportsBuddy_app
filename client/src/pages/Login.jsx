@@ -272,7 +272,7 @@ const Login = () => {
             ></GoogleLogin>
           </div>
           <div className="invisible md:visible">
-            <img className=" md:w-96 md:ml-14" src="ball.svg"></img>
+            <img className=" md:w-96 md:ml-14" src="login.svg"></img>
           </div>
         </div>
       </div>

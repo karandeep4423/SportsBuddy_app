@@ -3,7 +3,7 @@ export const createEvent = async (req, res, next) => {
   let event = new Event(req.body);
   try {
     await event.save();
-    res.status(201).json(event);
+    res.status(200).send({event:"Event created successfully"});
   } catch (err) {
     next(err.message);
   }
@@ -79,7 +79,7 @@ export const createComment = async (req, res, next) => {
   )
     .populate("comments.postedBy", "username")
     .then((result) => {
-      res.status(200).json({
+      res.status(200).send({
         message: result,
       });
     })

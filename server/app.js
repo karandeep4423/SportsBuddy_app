@@ -26,8 +26,10 @@ app.use(express.urlencoded({limit: '50mb', extended: true, parameterLimit: 50000
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-}).then(() => console.log('db connected'))
-.catch((err)=>console.log('err',err))
+}).then(() => {return "db connection established"})
+.catch((err)=>{return err.message})
+// then(() => console.log('db connected'))
+// .catch((err)=>console.log('err',err))
 
 //midleware
 app.use(cookieParser())
@@ -45,5 +47,5 @@ app.use("/",admin);
 const port = process.env.PORT || 8080;
 //listener
 
-const server = app.listen(port,()=>{console.log(`listening on port '${port}`)});
+// const server = app.listen(port,()=>{console.log(`listening on port '${port}`)});
 
