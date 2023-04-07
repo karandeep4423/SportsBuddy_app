@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 import NodeGeocoder from "node-geocoder";
+import dotenv from 'dotenv'
+dotenv.config();
+
 const Schema = mongoose.Schema;
 
 const EventSchema = new mongoose.Schema({
@@ -71,7 +74,7 @@ const EventSchema = new mongoose.Schema({
 const options = {
   provider: 'opencage',
   httpAdapter: 'https', 
-  apiKey:process.env.OPEN_CAGE_API_KEY, 
+  apiKey:process.env.OPEN_CAGE_APIKEY, 
   formatter: null 
 };
 
