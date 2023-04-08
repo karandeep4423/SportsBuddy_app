@@ -8,8 +8,8 @@ import auth from './routes/auth.js';
 import event from './routes/event.js';
 import admin from './routes/admin.js';
 import cookieParser from "cookie-parser";
-import path from 'path';
-
+import path from "path";
+const __dirname = path.resolve();
 dotenv.config();
 
 
@@ -33,11 +33,10 @@ mongoose.connect(process.env.MONGO_URI, {
 // .catch((err)=>console.log('err',err))
 
 // static files
-app.use(express.static(path.join(__dirname, "./client/dist")));
-
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
-});
+app.use(express.static(path.join(__dirname,"./client/dist")))
+app.get('*', (req,res)=>{
+    res.sendFile(path.join(__dirname,"./client/dist/index.html"));
+})
 
 
 //midleware
