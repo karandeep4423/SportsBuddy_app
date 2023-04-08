@@ -12,8 +12,8 @@ dist
 dist-ssr
 *.local
 
-# production
-/build
+# # production
+# /build
 
 # Editor directories and files
 .vscode/*
