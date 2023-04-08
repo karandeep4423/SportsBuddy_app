@@ -8,7 +8,7 @@ import auth from './routes/auth.js';
 import event from './routes/event.js';
 import admin from './routes/admin.js';
 import cookieParser from "cookie-parser";
-
+import path from 'path';
 
 dotenv.config();
 
@@ -31,6 +31,13 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((err)=>{return err.message})
 // .then(() => console.log('db connected'))
 // .catch((err)=>console.log('err',err))
+
+// static files
+app.use(express.static(path.join(__dirname,'client/dist')))
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'client/dist/index.html'));
+})
+
 
 //midleware
 app.use(cookieParser())
