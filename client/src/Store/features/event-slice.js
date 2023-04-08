@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as api from "../api";
 
 export const createEvent = createAsyncThunk(
-  "createevent",
+  "createvent",
   async ( eventData, { rejectWithValue }) => {
     try {
       const response = await api.createEvent(eventData);
@@ -25,10 +25,10 @@ export const deleteEvent = createAsyncThunk(
 );
 export const addToComment = createAsyncThunk(
   "event/addToComment",
-  async ({ commentValue, eventID }, { rejectWithValue }) => {
+  async ({ commentValue, eventID}, { rejectWithValue }) => {
     try {
       const response = await api.addToComment(commentValue, eventID);
-      console.log("resposne",response.data)
+
       return response.data;
     } catch (err) {
       rejectWithValue(err);
@@ -36,7 +36,7 @@ export const addToComment = createAsyncThunk(
   }
 );
 export const deleteToComment = createAsyncThunk(
-  "event/addToComment",
+  "event/deleteToComment",
   async ({ value, commentPostedBy, eventId }) => {
     try {
       const response = await api.deleteToComment(
@@ -52,9 +52,10 @@ export const deleteToComment = createAsyncThunk(
 );
 export const joinToEvent = createAsyncThunk(
   "event/joinToComment",
-  async (eventId) => {
+  async ({eventId,setBtnLoader}) => {
     try {
       const response = await api.joinToEvent(eventId);
+      setBtnLoader(false);
       return response.data;
     } catch (err) {
       return err;
@@ -72,10 +73,12 @@ export const updateToEvent = createAsyncThunk(
     }
   }
 );
+
 export const getEvents = createAsyncThunk("getevents", async () => {
   try {
     const response = await api.getEvents();
     return response.data;
+   
   } catch (err) {
     return err;
   }
@@ -155,6 +158,7 @@ const eventSlice = createSlice({
     },
     [deleteToComment.pending]: (state, action) => {
       state.loading = true;
+
     },
     [deleteToComment.fulfilled]: (state, action) => {
       state.loading = false;

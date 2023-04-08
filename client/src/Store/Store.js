@@ -11,6 +11,17 @@ export const Store =  configureStore({
     profile:profileSlice.reducer,
     admin:adminSlice.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore these action types
+        ignoredActions: ['event/joinToComment/fulfilled'],
+        // Ignore these field paths in all actions
+        ignoredActionPaths: ['meta.arg', 'payload.timestamp'],
+        // Ignore these paths in the state
+        ignoredPaths: ['event.event'],
+      },
+    }),
 });
 
 

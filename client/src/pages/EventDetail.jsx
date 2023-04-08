@@ -27,14 +27,14 @@ const EventDetail = () => {
 
   useEffect(() => {
     dispatch(getEvent(eventID));
-  }, [eventID]);
+  },[dispatch]);
+  
 
   const joinEvent = async (eventId) => {
     setBtnLoader(true);
     if(eventID && id?._id !=null){
-      await dispatch(joinToEvent(eventId));
+      await dispatch(joinToEvent({eventId,setBtnLoader}));
       await dispatch(getEvent(eventID));
-      setBtnLoader(false);
     }else{
       setBtnLoader(false);
       toast.error("Login to join event")
@@ -47,10 +47,11 @@ const EventDetail = () => {
     if(id?._id !=null){
     if (commentValue) {
       setCommentBtn(true);
-      await dispatch(addToComment({ commentValue, eventID }));
+      await dispatch(addToComment({ commentValue, eventID}));
       await dispatch(getEvent(eventID));
+      console.log("after loading")
       setCommentBtn(false);
-      toast.success("successfully");
+      toast.success("Comment added successfully");
     }else{
       setCommentBtn(false);
       toast.error("Write a comment");
@@ -63,7 +64,7 @@ const EventDetail = () => {
   const deleteComment = async (value, commentPostedBy, eventId) => {
     await dispatch(deleteToComment({ value, commentPostedBy, eventId }));
     await dispatch(getEvent(eventID));
-    toast.success("successfully");
+    toast.success("Deleted successfully");
   };
 
   let isEqual = (first, second) =>

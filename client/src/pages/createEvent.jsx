@@ -27,7 +27,7 @@ const CreateEvent = () => {
   useEffect(() => {
     dispatch(getSport());
     dispatch(getCities());
-  }, []);
+  },[dispatch]);
 
   const submit = async (e) => {
     e.preventDefault();

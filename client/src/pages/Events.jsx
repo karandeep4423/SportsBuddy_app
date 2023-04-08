@@ -15,7 +15,7 @@ const Events = () => {
     dispatch(getEvents());
   }, [dispatch]);
 
-  const data = events.filter(
+  const data = events?.filter(
     (item) =>
       item?.name?.toLowerCase().includes(search) ||
       item?.city?.toLowerCase().includes(search) ||
@@ -46,7 +46,7 @@ const Events = () => {
           ></input>
         </div>
       </div>
-      {events.length === 0 ? (
+      {events?.length === 0 ? (
         <div className="m-auto ">
           <Player
             className="w-72 h-72 "
