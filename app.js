@@ -33,9 +33,9 @@ mongoose.connect(process.env.MONGO_URI, {
 // .catch((err)=>console.log('err',err))
 
 // static files
-app.use(express.static(path.join(__dirname,'client/dist')))
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'client/dist/index.html'));
+app.use(express.static(path.join(__dirname,"client/dist")))
+app.get('*', function(req,res){
+    res.sendFile(path.join(__dirname,"client/dist/index.html"));
 })
 
 
