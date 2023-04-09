@@ -5,11 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon app.js",
-    "client": "npm start --prefix ./client ",
-    "dev": "concurrently \"npm start\" \"npm run client\""
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Karandeep Singh",
   "license": "ISC",

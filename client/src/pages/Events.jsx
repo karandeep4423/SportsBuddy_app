@@ -9,11 +9,11 @@ const Events = () => {
   const [search, setSearch] = useState("");
   let dispatch = useDispatch();
 
-  const events = useSelector((state) => state.event.events);
+  const events = useSelector((state) => state?.event?.events);
 
   useEffect(() => {
     dispatch(getEvents());
-  }, [dispatch]);
+  },[dispatch]);
 
   const data = events?.filter(
     (item) =>
