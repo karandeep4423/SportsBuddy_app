@@ -8,8 +8,8 @@ import auth from './routes/auth.js';
 import event from './routes/event.js';
 import admin from './routes/admin.js';
 import cookieParser from "cookie-parser";
-// import path from "path";
-// const __dirname = path.resolve();
+import path from "path";
+const __dirname = path.resolve();
 dotenv.config();
 
 
