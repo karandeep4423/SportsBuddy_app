@@ -8,8 +8,8 @@ import auth from './routes/auth.js';
 import event from './routes/event.js';
 import admin from './routes/admin.js';
 import cookieParser from "cookie-parser";
-import path from "path";
-const __dirname = path.resolve();
+// import path from "path";
+// const __dirname = path.resolve();
 dotenv.config();
 
 
@@ -40,10 +40,7 @@ mongoose.connect(process.env.MONGO_URI, {
 //     res.sendFile(path.resolve(__dirname,'client', 'dist','index.html'));
 // })
 // }
-app.use(express.static('./client/dist'));
-app.get('*', (req,res)=>{
-    res.sendFile(path.resolve(__dirname,'client', 'dist','index.html'));
-})
+
 
 //midleware
 app.use(cookieParser())
