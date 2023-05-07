@@ -1,5 +1,5 @@
 import axios from "axios";
-const API = axios.create({ baseURL: "https://sportsbuddy-qpoe.onrender.com" });
+const API = axios.create({ baseURL: "https://sportsbuddy.onrender.com" });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("user")) {
