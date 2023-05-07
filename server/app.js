@@ -40,6 +40,10 @@ mongoose.connect(process.env.MONGO_URI, {
 //     res.sendFile(path.resolve(__dirname,'client', 'dist','index.html'));
 // })
 // }
+app.use(express.static('./client/dist'));
+app.get('*', (req,res)=>{
+    res.sendFile(path.resolve(__dirname,'client', 'dist','index.html'));
+})
 
 //midleware
 app.use(cookieParser())
